@@ -18,6 +18,17 @@
           <div class="clear-float"></div>
         </div>
       </div>
+      <div class="chat-filter">
+        <div v-bind:key="item.id" v-for="item in dataList">
+          <div v-if="item.ask" class="left-content">
+            <el-alert class="text-content" :title="item.ask" :closable="false" type="success"></el-alert>
+          </div>
+          <div v-else class="right-content">
+            <el-alert class="text-content" :title="item.reply" :closable="false" type="warning"></el-alert>
+          </div>
+          <div class="clear-float"></div>
+        </div>
+      </div>
       <div class="clear-float"></div>
       <el-form-item label="回复" prop="reply">
         <el-input v-model="ruleForm.reply" placeholder="回复" clearable></el-input>
